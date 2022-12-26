@@ -1,0 +1,125 @@
+{
+  "name": "ai-platform-filter",
+  "version": "1.0.0",
+  "private": true,
+  "author": "ebit",
+  "description": "AI平台 数据筛选",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "electron": "electron ./app/",
+    "dev": "cross-env NODE_ENV=development electron ./app/",
+    "build": "cross-env NODE_ENV=production vue-cli-service build",
+    "electron:copy": "cpx ./app/**/*.js ./build",
+    "pack:mac": "npm run build && npm run electron:copy && electron-builder --mac",
+    "pack:win": "npm run build && npm run electron:copy && electron-builder --win",
+    "pack:all": "npm run build && npm run electron:copy && electron-builder --win && electron-builder --mac",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint"
+  },
+  "build": {
+    "extraMetadata": {
+      "main": "build/index.js"
+    },
+    "buildDependenciesFromSource": true,
+    "nodeGypRebuild": false,
+    "npmRebuild": false,
+    "extraResources": [
+      {
+        "from": "resources/",
+        "to": "./"
+      }
+    ],
+    "productName": "数据筛选",
+    "appId": "dataFilter.app",
+    "files": [
+      "build/**/*"
+    ],
+    "mac": {
+      "icon": "./resources/icons/icon.icns",
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    },
+    "dmg": {
+      "sign": false,
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    },
+    "win": {
+      "icon": "./resources/icons/icon.ico",
+      "artifactName": "${productName}_setup_${version}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "build/icons"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    },
+    "directories": {
+      "buildResources": "assets",
+      "output": "release"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "canvas": "^2.9.1",
+    "core-js": "^3.6.5",
+    "electron-store": "^8.0.1",
+    "element-ui": "^2.15.6",
+    "fabric": "^5.2.1",
+    "file-saver": "^2.0.5",
+    "fs-extra": "^10.1.0",
+    "js-cookie": "^3.0.1",
+    "jszip": "^3.10.0",
+    "lodash": "^4.17.21",
+    "lodash-id": "^0.14.1",
+    "lowdb": "^1.0.0",
+    "postcss-px2rem": "^0.3.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.3",
+    "electron": "^16.0.7",
+    "electron-builder": "^22.14.5",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.12.0",
+    "px2rem-loader": "^0.1.9",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/standard"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

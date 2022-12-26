@@ -1,0 +1,346 @@
+@import './element-ui.scss';
+// >>> 功能性icon
+.icon--prev,
+.icon--next {
+  position: absolute;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  font-size: 24px;
+  cursor: pointer;
+}
+.icon--prev {
+  left: 30px;
+}
+.icon--next {
+  right: 30px;
+}
+// <<< 功能性icon
+
+.pointer {
+  cursor: pointer;
+}
+// >>> 文本对齐
+.text-align-l {
+  text-align: left;
+}
+.text-align-r {
+  text-align: right;
+}
+.text-align-c {
+  text-align: center;
+}
+// <<< 文本对齐
+
+// >>> display
+.inline-block {
+  display: inline-block;
+}
+// <<< display
+
+// >>> flex 布局
+.flex {
+  display: flex;
+}
+.flex-2c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-ac {
+  display: flex;
+  align-items: center;
+}
+.flex-jc {
+  display: flex;
+  justify-content: center;
+}
+
+.a-i-center {
+  align-items: center;
+}
+
+.a-i-start {
+  align-items: flex-start;
+}
+
+.a-i-end {
+  align-items: flex-end;
+}
+
+.j-c-center {
+  justify-content: center;
+}
+
+.j-c-start {
+  justify-content: flex-start;
+}
+
+.j-c-end {
+  justify-content: flex-end;
+}
+
+.j-c-ar {
+  justify-content: space-around;
+}
+
+.j-c-bt {
+  justify-content: space-between;
+}
+
+.flex_wrap {
+  flex-wrap: wrap;
+}
+// <<< flex 布局
+
+// >>> 换行
+.max-line-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.max-line-2 {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.max-line-3 {
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+// <<< 换行
+
+// >>> font
+
+.font-bold {
+  font-weight: bold;
+}
+.font-bolder {
+  font-weight: bolder;
+}
+
+// <<< font
+
+// >>> 颜色
+.color-333 {
+  color: #333;
+}
+.color-666 {
+  color: #666;
+}
+.color-999 {
+  color: #999;
+}
+.color-aaa {
+  color: #aaa;
+}
+.color-e6 {
+  color: #e6e6e6;
+}
+
+// <<< 颜色
+
+// >>> title
+.title1 {
+  font-size: 16px;
+  line-height: 22px;
+  border-bottom: 3px solid #35e287;
+  color: #333333;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.title2 {
+  font-size: 16px;
+  line-height: 22px;
+  color: #333333;
+  font-weight: bold;
+}
+
+// <<< title
+
+// >>> border
+.border--right--e6 {
+  border-right: 1px solid #e6e6e6;
+}
+// <<< border
+
+// >>> decoration 装饰(色块、竖线)(分割、修饰)
+.decoration--bottomLine {
+  position: relative;
+}
+.decoration--bottomLine::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #35e287;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.decoration--verticalLine {
+  position: relative;
+}
+.decoration--verticalLine::after {
+  content: '';
+  width: 1px;
+  height: 24px;
+  background-color: #e6e6e6;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+// <<< decoration
+
+/***     全局设置谷歌浏览器滚动条样式               **/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #f6f6f6;
+  //var(--primary):;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+/*去掉了input number类标签的前头*/
+/*
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+*/
+
+// >>>>>>>>>>>> 循环生成样式
+/* through包含结束值, to不包含 */
+@for $i from 1 through 24 {
+  .fs#{$i} {
+    font-size: ($i) + px;
+  }
+}
+@for $i from 1 through 200 {
+  /* 宽度 */
+  .w#{$i} {
+    width: ($i) + px;
+  }
+  /* 高度 */
+  .h#{$i} {
+    height: ($i) + px;
+  }
+  /* 宽高 */
+  .wh#{$i} {
+    height: ($i) + px;
+    width: ($i) + px;
+  }
+  /* 最小高度 */
+  .minh#{$i} {
+    min-height: ($i) + px;
+  }
+}
+
+@for $i from 0 through 80 {
+  /* 内边距 */
+  .p#{$i} {
+    padding: ($i) + px;
+  }
+  /* 左内边距 */
+  .pl#{$i} {
+    padding-left: ($i) + px;
+  }
+  /* 右内边距 */
+  .pr#{$i} {
+    padding-right: ($i) + px;
+  }
+  /* 上内边距 */
+  .pt#{$i} {
+    padding-top: ($i) + px;
+  }
+  /* 底内边距 */
+  .pb#{$i} {
+    padding-bottom: ($i) + px;
+  }
+  /* 左右内边距 */
+  .plr#{$i} {
+    padding-left: ($i) + px;
+    padding-right: ($i) + px;
+  }
+  /* 上下内边距 */
+  .ptb#{$i} {
+    padding-top: ($i) + px;
+    padding-bottom: ($i) + px;
+  }
+  /* 上左内边距 */
+  .ptl#{$i} {
+    padding-top: ($i) + px;
+    padding-left: ($i) + px;
+  }
+  /* 外边距 */
+  .m#{$i} {
+    margin: ($i) + px;
+  }
+  /* 左外边距 */
+  .ml#{$i} {
+    margin-left: ($i) + px;
+  }
+  /* 右外边距 */
+  .mr#{$i} {
+    margin-right: ($i) + px;
+  }
+  /* 上外边距 */
+  .mt#{$i} {
+    margin-top: ($i) + px;
+  }
+  /* 下外边距 */
+  .mb#{$i} {
+    margin-bottom: ($i) + px;
+  }
+  /* 左右外边距 */
+  .mlr#{$i} {
+    margin-left: ($i) + px;
+    margin-right: ($i) + px;
+  }
+  /* 上下外边距 */
+  .mtb#{$i} {
+    margin-top: ($i) + px;
+    margin-bottom: ($i) + px;
+  }
+}
+// >>>>>>>>>>>> 循环生成样式

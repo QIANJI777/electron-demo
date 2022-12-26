@@ -1,0 +1,70 @@
+/*@font-face {
+  font-family: "MFJinHua";
+  src: url(../font/MFJinHua-Noncommercial-Regular.ttf);
+}*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  /* font: 12px '宋体', 'Arial Narrow', HELVETICA;*/
+}
+
+#app {
+  height: 100%;
+}
+
+a:focus,
+a:active,
+input {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+}
+
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+/* *::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #1144a3;
+} */
+
+/* 定义滚动条轨道 内阴影+圆角 */
+/* *::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-top-right-radius:5px ;
+	border-bottom-right-radius:5px ;
+	background-color: #123e90;
+} */
+
+/*定义滑块 内阴影+圆角*/
+/* *::-webkit-scrollbar-thumb
+{
+	border-radius: 8px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #417ff1;
+} */

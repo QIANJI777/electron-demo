@@ -1,0 +1,260 @@
+// 覆盖element-ui的部分样式
+
+// el-menu
+.el-menu.el-menu--horizontal {
+  border: none;
+}
+
+// el-dropdown-menu
+.el-dropdown-menu__item:focus,
+.el-dropdown-menu__item:not(.is-disabled):hover {
+  color: #606266;
+  background-color: rgba(53, 226, 135, 0.1);
+}
+
+// el-button
+.el-button--primary {
+  border: 1px solid #35e287;
+  border-radius: 6px;
+  color: #35e287;
+  background-color: #fff;
+
+  &:hover,
+  &:focus {
+    color: #35e287;
+    background-color: rgba(53, 226, 135, 0.1);
+    border-color: #35e287;
+  }
+}
+
+.el-button {
+  padding: 6px 10px;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.el-button:focus,
+.el-button:hover {
+  color: #35e287;
+  background-color: rgba(53, 226, 135, 0.1);
+  border-color: #35e287;
+}
+
+// el-input
+.el-input--suffix .el-input__inner {
+  padding-right: 30px;
+}
+
+.el-input {
+  .el-input__inner {
+    height: 32px;
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .el-input__icon {
+    line-height: 32px;
+  }
+}
+
+.dialog-content {
+  .el-input {
+    width: 200px;
+  }
+}
+
+// el-radio-group
+.el-radio-group {
+  .el-radio__inner {
+    border-color: #35e287;
+  }
+
+  .el-radio__input {
+    &.is-checked {
+      .el-radio__inner {
+        background: #35e287;
+      }
+    }
+
+    .el-radio__inner {
+      border-color: #35e287;
+    }
+  }
+
+  .el-radio__input.is-checked + .el-radio__label {
+    color: #666;
+  }
+
+  .el-radio__label {
+    color: #666;
+  }
+}
+
+// el-checkbox
+.el-checkbox__input.is-checked + .el-checkbox__label {
+  color: #35e287;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: #35e287;
+  border-color: #35e287;
+}
+
+// el-tabs
+.el-tabs--bottom .el-tabs__item.is-bottom:nth-child(2),
+.el-tabs--bottom .el-tabs__item.is-top:nth-child(2),
+.el-tabs--top .el-tabs__item.is-bottom:nth-child(2),
+.el-tabs--top .el-tabs__item.is-top:nth-child(2),
+.el-tabs--bottom .el-tabs__item.is-bottom:last-child,
+.el-tabs--bottom .el-tabs__item.is-top:last-child,
+.el-tabs--top .el-tabs__item.is-bottom:last-child,
+.el-tabs--top .el-tabs__item.is-top:last-child {
+  padding: 0 20px;
+}
+
+.el-tabs__item.is-active,
+.el-tabs__item:hover,
+.el-breadcrumb__inner a:hover,
+.el-breadcrumb__inner.is-link:hover {
+  color: #35e287;
+}
+
+.el-tabs__header {
+  margin-bottom: 0;
+}
+
+.el-tabs__nav-wrap::after {
+  height: 1px;
+}
+
+.el-tabs__active-bar {
+  background-color: #35e287;
+}
+
+// el-pagination el-pager
+.el-pager li {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  margin: 0 3px;
+
+  &:hover {
+    color: #35e287;
+  }
+}
+
+.el-pager li.active {
+  color: #fff;
+  background-color: #35e287;
+  border-color: #35e287;
+}
+
+.el-pager li.active + li {
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.el-pager li {
+  width: 30px;
+  padding: 0 4px;
+}
+
+// el-pagination
+.el-pagination {
+  float: right;
+}
+
+.el-pagination,
+.el-pagination__total {
+  color: #666666;
+}
+
+.el-pagination .el-icon:hover {
+  color: #35e287;
+}
+
+.el-pagination__jump {
+  margin-left: 5px;
+}
+
+// el-dialog
+.el-dialog__body {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.el-dialog__title {
+  font-size: 16px;
+  font-family: PingFangSC-Medium;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 24px;
+}
+
+// el-form
+.el-form--inline .el-form-item {
+  margin-bottom: 12px;
+}
+
+// el-select
+.el-select {
+  width: 200px;
+}
+
+.el-select-dropdown__item.selected {
+  color: #35e287;
+}
+
+.el-tree-node__label,
+.el-tabs__item,
+.el-checkbox__label,
+.el-radio__label {
+  font-size: 14px;
+}
+
+// el-upload
+.el-upload--picture-card:hover,
+.el-upload:focus,
+.el-upload--picture-card i {
+  border-color: #35e287;
+  color: #35e287;
+}
+
+.el-upload--picture-card {
+  background-color: rgba(53, 226, 135, 0.1);
+}
+
+/* el-tree */
+.el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+  background-color: #35e287;
+  color: #fff;
+}
+.is-current:active,
+.is-current:visited,
+.is-current:focus .is-current:target,
+.el-tree-node__content:hover {
+  background-color: #35e287 !important;
+  color: #fff !important;
+}
+
+// >>> progress
+.el-progress {
+  .el-progress-bar__outer {
+    height: 12px !important;
+    background-color: #fff;
+    .el-progress-bar__inner {
+      background-color: #35e287;
+    }
+  }
+}
+
+// <<< progress
+
+// >>> el-loading
+.el-loading-mask {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+// <<< el-loading
